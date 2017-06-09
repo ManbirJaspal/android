@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -145,6 +146,22 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    fun AutoPlay() {
+        var emptyCells = ArrayList<Int>()
+        for (cellID in 1..9) {
+
+            if(!( player1.contains(cellID) ||  player2.contains(cellID))) {
+
+                emptyCells.add(cellID)
+            }
+        }
+
+        val r = Random()
+        val randomIndex = r.nextInt(emptyCells.size-0)+0  //generating random no.
+
+        val cellID = emptyCells.get[randomIndex]
     }
 
 
