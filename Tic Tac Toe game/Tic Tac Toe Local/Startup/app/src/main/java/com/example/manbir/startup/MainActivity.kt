@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
             buSelected.setBackgroundColor(Color.GREEN)
             player1.add(cellID)
             activePlayer= 2
+            AutoPlay()
         }
         else{
 
@@ -158,10 +159,31 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val r = Random()
+        val r = Random() // random is a class already oresent in java
         val randomIndex = r.nextInt(emptyCells.size-0)+0  //generating random no.
 
-        val cellID = emptyCells.get[randomIndex]
+        val cellID = emptyCells[randomIndex]   // chooses a random empty cellid
+
+        var buSelect:Button?
+
+        when(cellID) {
+
+            1-> buSelect= bu1
+            2-> buSelect= bu2
+            3-> buSelect= bu3
+            4-> buSelect= bu4
+            5-> buSelect= bu5
+            6-> buSelect= bu6
+            7-> buSelect= bu7
+            8-> buSelect= bu8
+            9-> buSelect= bu9
+
+            else-> {
+                buSelect = bu1
+            }
+        }
+
+        PlayGame(cellID,buSelect)
     }
 
 
